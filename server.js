@@ -8,7 +8,17 @@ const path = require("path");
 // spells
 require("dotenv").config();
 require("express-async-errors");
-app.use(cors());
+
+
+
+// routers
+const bookmarkRouter = require("./routes/bookmark");
+const notFound = require("./middleware/not-found");
+
+app.use(express.json());
+app.use("/", bookmarkRouter);
+app.use(notFound);
+app.use(errorHandler);
 
 // server static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -21,14 +31,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// routers
-const bookmarkRouter = require("./routes/bookmark");
-const notFound = require("./middleware/not-found");
-
-app.use(express.json());
-app.use("/", bookmarkRouter);
-app.use(notFound);
-app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 const startServer = async () => {
