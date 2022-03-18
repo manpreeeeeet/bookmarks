@@ -17,8 +17,7 @@ const notFound = require("./middleware/not-found");
 
 app.use(express.json());
 app.use("/bookmark", bookmarkRouter);
-app.use(notFound);
-app.use(errorHandler);
+
 
 // server static assets if in production
 if (process.env.NODE_ENV === "production") {
@@ -29,6 +28,8 @@ if (process.env.NODE_ENV === "production") {
       path.resolve(__dirname, "client", "bookmark", "build", "index.html")
     );
   });
+  app.use(notFound);
+  app.use(errorHandler);
 }
 
 
