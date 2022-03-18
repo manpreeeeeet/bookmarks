@@ -24,14 +24,14 @@ button {
   border: none;
   background-color: grey;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
   .grid-container {
     padding: 5px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
   }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 650px) {
   .grid-container {
     padding: 5px;
     display: grid;
@@ -47,6 +47,7 @@ button {
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid white;
+  font-size: 0.8rem;
 }
 .grid-item span,
 p {
@@ -56,7 +57,7 @@ p {
 }
 .grid-item h3 {
   color: black;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: start;
 }
 .grid-item:hover {
