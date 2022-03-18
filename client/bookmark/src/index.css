@@ -80,6 +80,7 @@ p {
 .tag-button {
   height: 1.5rem;
   margin-right: 5px;
+  margin-bottom: 5px;
   padding: 5px;
   border-radius: 3px;
   background-color: darkgrey;
