@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+p,
+h3,
+h2 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+button {
+  border: none;
+  background-color: grey;
+}
+.grid-container {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.bookmark-web-snippet {
+  width: 100%;
+}
+.grid-item {
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+.grid-item span,
+p {
+  color: grey;
+  word-wrap: break-word;
+  text-align: start;
+}
+.grid-item h3 {
+  color: black;
+  font-size: 1.2rem;
+  text-align: start;
+}
+.grid-item:hover {
+  border: 1px solid lightgray;
+}
+.bookmark-icon {
+  height: 1em;
+}
+.bookmark-tag {
+  width: fit-content;
+  padding: 1px;
+  background-color: yellow;
+  border-radius: 1px;
+}
+.container-wrapper {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.tag-button {
+  height: 1.5rem;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: darkgrey;
+}
+.tag-button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.icon {
+  transform: translateY(0.2em);
+}
+.main-header {
+  margin-bottom: 0.8rem;
+}
+.url-container {
+  text-align: start;
+}
