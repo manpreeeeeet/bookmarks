@@ -24,10 +24,19 @@ button {
   border: none;
   background-color: grey;
 }
-.grid-container {
-  padding: 5px;
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
+@media screen and (max-width: 700px) {
+  .grid-container {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media screen and (min-width: 700px) {
+  .grid-container {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+  }
 }
 
 .bookmark-web-snippet {
