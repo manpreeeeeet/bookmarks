@@ -16,7 +16,7 @@ const bookmarkRouter = require("./routes/bookmark");
 const notFound = require("./middleware/not-found");
 
 app.use(express.json());
-app.use("/", bookmarkRouter);
+app.use("/bookmark", bookmarkRouter);
 app.use(notFound);
 app.use(errorHandler);
 
