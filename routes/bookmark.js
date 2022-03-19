@@ -8,11 +8,6 @@ const {
   createBookmark,
 } = require("../controllers/bookmark");
 
-router.route("/").get(getAllBookmarks).post(createBookmark);
-router
-  .route("/:bookmarkID")
-  .get(getBookmark)
-  .patch(editBookmark)
-  .delete(deleteBookmark);
+router.route("/").get(getAllBookmarks);
 
 module.exports = router;
