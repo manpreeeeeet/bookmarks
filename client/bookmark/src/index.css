@@ -98,3 +98,7 @@ p {
 .url-container {
   text-align: start;
 }
+.grid-item a {
+  width: 100%;
+  display: inline-block;
+}
