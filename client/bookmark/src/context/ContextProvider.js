@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // Base url
-const baseUrl = "/bookmark";
+const baseUrl = "http://localhost:5000/bookmark";
 const BookmarkContext = React.createContext();
 function BookmarkProvider({ children }) {
   const [bookmarks, setBookmarks] = useState([]);
