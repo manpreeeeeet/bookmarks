@@ -2,13 +2,17 @@ const express = require("express");
 const router = express.Router();
 const {
   getAllBookmarks,
-  getBookmark,
-  editBookmark,
-  deleteBookmark,
   createBookmark,
+  deleteBookmark,
+  editBookmark,
 } = require("../controllers/bookmark");
+const authenticate = require("../middleware/authorization");
 
 router.route("/").get(getAllBookmarks);
-router.route("/:bookmarkID").post(createBookmark);
-
+router.use("/:bookmarkID", authenticate);
+router
+  .route("/:bookmarkID")
+  .post(createBookmark)
+  .delete(deleteBookmark)
+  .patch(editBookmark);
 module.exports = router;

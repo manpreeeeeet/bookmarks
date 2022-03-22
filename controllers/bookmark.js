@@ -6,17 +6,24 @@ const getAllBookmarks = async (req, res) => {
   res.status(200).json({ msg: "all bookmarks", data: allBookmarks });
 };
 
-const getBookmark = async (req, res) => {
-  res.status(200).json({ msg: "get single bookmark" });
-};
+// const getBookmark = async (req, res) => {
+//   res.status(200).json({ msg: "get single bookmark" });
+// };
 
 const editBookmark = async (req, res) => {
-  res.status(200).json({ msg: "edit single bookmark" });
+  const { bookmarkID } = req.params;
+  const { keyword } = req.body;
+  const updatedBookmark = await Bookmark.findByIdAndUpdate(
+    { keyword },
+    { new: true }
+  );
+  res.status(200).json({ msg: updatedBookmark });
 };
 
 const deleteBookmark = async (req, res) => {
-  await Bookmark.deleteMany({});
-  res.status(200).json({ msg: "delete single bookmark" });
+  const { bookmarkID } = req.params;
+  const deletedBookmark = await Bookmark.deleteOne({ _id: bookmarkID });
+  res.status(200).json({ msg: deletedBookmark });
 };
 
 const createBookmark = async (req, res) => {
@@ -33,7 +40,6 @@ const createBookmark = async (req, res) => {
 
 module.exports = {
   getAllBookmarks,
-  getBookmark,
   editBookmark,
   deleteBookmark,
   createBookmark,
