@@ -10,7 +10,9 @@ require("dotenv").config();
 require("express-async-errors");
 
 // routers
-const bookmarkRouter = require("./routes/bookmark");
+const bookmarkRoute = require("./routes/bookmark");
+const userRoute = require("./routes/user");
+const authenticate = require("./middleware/authorization");
 const notFound = require("./middleware/not-found");
 
 // cors
@@ -21,7 +23,8 @@ const corOptions = {
 app.use(cors(corOptions));
 
 app.use(express.json());
-app.use("/bookmark", bookmarkRouter);
+app.use("/user", userRoute);
+app.use("/bookmark", bookmarkRoute);
 
 // UNCOMMENT FOR HEROKU DEPLOYMENT
 // // server static assets if in production
