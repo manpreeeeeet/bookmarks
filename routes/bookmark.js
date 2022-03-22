@@ -9,5 +9,6 @@ const {
 } = require("../controllers/bookmark");
 
 router.route("/").get(getAllBookmarks);
+router.route("/:bookmarkID").post(createBookmark);
 
 module.exports = router;

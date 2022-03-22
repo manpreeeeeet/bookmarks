@@ -1,5 +1,6 @@
 const WebsiteData = require("../utils/metaData");
 const Bookmark = require("../models/bookmark");
+const valid_url = require("valid-url");
 const getAllBookmarks = async (req, res) => {
   const allBookmarks = await Bookmark.find();
   res.status(200).json({ msg: "all bookmarks", data: allBookmarks });
@@ -20,8 +21,8 @@ const deleteBookmark = async (req, res) => {
 
 const createBookmark = async (req, res) => {
   const { url, keyword } = req.body;
-  if (!url) {
-    throw Error("No url provided");
+  if (!url || !valid_url.is_uri(url)) {
+    throw Error("URL NOT VALID");
   }
   const BookmarkData = await WebsiteData.get(url);
   BookmarkData.keyword = keyword;

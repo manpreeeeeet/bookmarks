@@ -93,7 +93,7 @@ p {
   transform: translateY(0.2em);
 }
 .main-header {
-  margin-bottom: 0.8rem;
+  margin: 0.8rem 0;
 }
 .url-container {
   text-align: start;
