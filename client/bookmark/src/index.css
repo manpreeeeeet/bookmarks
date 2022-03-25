@@ -22,7 +22,7 @@ a {
 }
 button {
   border: none;
-  background-color: grey;
+  /*background-color: grey;*/
 }
 @media screen and (max-width: 650px) {
   .grid-container {
@@ -82,11 +82,11 @@ p {
   margin-right: 5px;
   margin-bottom: 5px;
   padding: 5px;
-  border-radius: 3px;
-  background-color: darkgrey;
+  border-radius: 2px;
+  /*background-color: darkgrey;*/
 }
 .tag-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
 }
 .icon {

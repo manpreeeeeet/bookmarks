@@ -1,12 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Bookmark from "./components/Bookmark";
-
+import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Admin from "./pages/Admin";
+import Login from "./pages/Login";
 function App() {
   return (
-    <>
-      <Bookmark />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
