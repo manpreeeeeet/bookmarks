@@ -6,9 +6,9 @@ const getAllBookmarks = async (req, res) => {
   res.status(200).json({ msg: "all bookmarks", data: allBookmarks });
 };
 
-// const getBookmark = async (req, res) => {
-//   res.status(200).json({ msg: "get single bookmark" });
-// };
+const getBookmark = async (req, res) => {
+  res.status(200).json({ msg: "get single bookmark" });
+};
 
 const editBookmark = async (req, res) => {
   const { bookmarkID } = req.params;
@@ -43,4 +43,5 @@ module.exports = {
   editBookmark,
   deleteBookmark,
   createBookmark,
+  getBookmark,
 };

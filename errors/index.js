@@ -1,0 +1,4 @@
+const API_ERROR = require("./API_ERROR");
+const AUTHENTICATION_ERROR = require("./AUTHENTICATION_ERROR");
+
+module.exports = { API_ERROR, AUTHENTICATION_ERROR };

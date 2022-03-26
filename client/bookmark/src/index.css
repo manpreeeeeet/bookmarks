@@ -13,7 +13,8 @@ code {
 }
 p,
 h3,
-h2 {
+h2,
+h4 {
   margin: 0;
 }
 a {
@@ -101,4 +102,33 @@ p {
 .grid-item a {
   width: 100%;
   display: inline-block;
+}
+input[type="text"],
+input[type="password"] {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 1.5em;
+}
+.form-container {
+  width: 20rem;
+  margin: 2rem auto 0;
+  border: 1px solid grey;
+  padding: 5px;
+}
+.login-form {
+  margin: 0 auto;
+}
+.center-container {
+  text-align: center;
+}
+.submit-btn {
+  width: 100%;
+  padding: 2px;
+}
+.div-container {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  border: 1px solid grey;
 }

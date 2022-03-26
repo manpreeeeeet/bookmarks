@@ -1,40 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BookmarkContext } from "../context/ContextProvider";
 import { ImBookmarks } from "react-icons/im";
-
-function Tags({ bookmarks, filterBookmarks }) {
-  const [keywords, setKeywords] = useState([]);
-
-  useEffect(() => {
-    const newKeywords = [
-      "all",
-      ...new Set(
-        bookmarks.map((bookmark) => {
-          const { keyword } = bookmark;
-          return keyword;
-        })
-      ),
-    ];
-    setKeywords(newKeywords);
-  }, [bookmarks]);
-
-  return (
-    <div>
-      <br />
-      {keywords.map((keyword, index) => {
-        return (
-          <button
-            key={index}
-            onClick={() => filterBookmarks(keyword)}
-            className="tag-button"
-          >
-            {keyword}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
+import { Tags } from "./Tags";
 
 function Bookmarks() {
   const { bookmarks } = useContext(BookmarkContext);
@@ -61,7 +28,7 @@ function Bookmarks() {
           <ImBookmarks className="icon" />
           Bookmarks
         </h2>
-        <Tags bookmarks={bookmarks} filterBookmarks={filterBookmarks} />
+        <Tags bookmarks={bookmarks} clickFunction={filterBookmarks} />
         <div className="grid-container">
           {shownBookmarks.map((bookmarkData) => {
             const id = bookmarkData._id;
