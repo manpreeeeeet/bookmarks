@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
+import CreateBookmark from "./components/CreateBookmark";
+import { EditableBookmarks } from "./components/EditableBookmarks";
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +13,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/create" element={<CreateBookmark />} />
+        <Route path="/edit" element={<EditableBookmarks />} />
       </Routes>
     </BrowserRouter>
   );

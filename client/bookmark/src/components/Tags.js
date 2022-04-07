@@ -4,15 +4,19 @@ export function Tags({ bookmarks, clickFunction }) {
   const [keywords, setKeywords] = useState([]);
 
   useEffect(() => {
-    const newKeywords = [
-      "all",
-      ...new Set(
-        bookmarks.map((bookmark) => {
-          const { keyword } = bookmark;
-          return keyword;
-        })
-      ),
-    ];
+    const mySet = new Set();
+    const myKeywordsArr = bookmarks.map((bookmark) => {
+      const { keywords } = bookmark;
+      return keywords;
+    });
+    myKeywordsArr.forEach((arr) => {
+      arr.forEach((keyword) => {
+        mySet.add(keyword);
+      });
+    });
+
+    const newKeywords = ["all", ...mySet];
+
     setKeywords(newKeywords);
   }, [bookmarks]);
 
@@ -22,6 +26,7 @@ export function Tags({ bookmarks, clickFunction }) {
       {keywords.map((keyword, index) => {
         return (
           <button
+            type="button"
             key={index}
             onClick={() => clickFunction(keyword)}
             className="tag-button"

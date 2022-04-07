@@ -16,7 +16,7 @@ function Bookmarks() {
       return;
     }
     const newShownBookmarks = bookmarks.filter((bookmark) => {
-      return bookmark.keyword === tag;
+      return bookmark.keywords.includes(tag);
     });
     setShownBookmarks(newShownBookmarks);
   };
@@ -40,7 +40,7 @@ function Bookmarks() {
   );
 }
 
-function Bookmark({ _id, url, title, description, icon, image, keyword }) {
+function Bookmark({ _id, url, title, description, icon, image, keywords }) {
   const cleanUrl = (url) => {
     let newUrl = url.split("//")[1].split("/")[0];
     return newUrl;
@@ -63,7 +63,9 @@ function Bookmark({ _id, url, title, description, icon, image, keyword }) {
           <img src={icon} alt="" className="bookmark-icon" />
           <span> {cleanUrl(url)}</span>
         </div>
-        <div className="bookmark-tag">{keyword}</div>
+        {keywords.map((keyword) => {
+          return <div className="bookmark-tag">{keyword}</div>;
+        })}
       </a>
     </section>
   );

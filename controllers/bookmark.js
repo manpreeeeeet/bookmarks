@@ -27,12 +27,13 @@ const deleteBookmark = async (req, res) => {
 };
 
 const createBookmark = async (req, res) => {
-  const { url, keyword } = req.body;
+  const { url, keywords } = req.body;
   if (!url || !valid_url.is_uri(url)) {
     throw Error("URL NOT VALID");
   }
+  const keywordArr = keywords.split(",");
   const BookmarkData = await WebsiteData.get(url);
-  BookmarkData.keyword = keyword;
+  BookmarkData.keywords = keywordArr;
   const newBookmark = await Bookmark.create({ ...BookmarkData });
 
   res.status(200).json({ msg: "create a bookmark", data: newBookmark });

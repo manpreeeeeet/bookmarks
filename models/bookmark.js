@@ -16,8 +16,8 @@ const bookmarkSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  keyword: {
-    type: String,
+  keywords: {
+    type: [String],
   },
 });
 

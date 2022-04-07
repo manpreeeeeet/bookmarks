@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import CreateBookmark from "../components/CreateBookmark";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -22,11 +21,7 @@ function Admin() {
     checkAccess();
   }, []);
 
-  return (
-    <div>
-      <CreateBookmark />
-    </div>
-  );
+  return <div>Admin routes</div>;
 }
 
 export default Admin;

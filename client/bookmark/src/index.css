@@ -68,10 +68,12 @@ p {
   height: 1em;
 }
 .bookmark-tag {
-  width: fit-content;
   padding: 1px;
-  background-color: yellow;
+  margin: 2px;
+  background-color: lightyellow;
   border-radius: 1px;
+  width: fit-content;
+  float: left;
 }
 .container-wrapper {
   max-width: 60rem;
@@ -129,6 +131,6 @@ input[type="password"] {
 .div-container {
   margin: 0 auto;
   width: 50%;
-  text-align: center;
   border: 1px solid grey;
+  min-width: 30rem;
 }
