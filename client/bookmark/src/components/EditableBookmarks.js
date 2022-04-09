@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { BookmarkContext } from "../context/ContextProvider";
 import Admin from "../pages/Admin";
 import axios from "axios";
+import { baseUrl } from "../info";
 
 export function EditableBookmarks() {
   const { bookmarks } = useContext(BookmarkContext);
@@ -54,10 +55,7 @@ function EditableBookmark({
               const config = {
                 headers: { Authorization: "Bearer " + token },
               };
-              await axios.delete(
-                "http://localhost:5000/bookmark/" + _id,
-                config
-              );
+              await axios.delete(baseUrl + _id, config);
             }}
           >
             Delete

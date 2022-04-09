@@ -28,19 +28,19 @@ app.use("/bookmark", bookmarkRoute);
 
 //UNCOMMENT FOR HEROKU DEPLOYMENT
 // server static assets if in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/bookmark/build")); // set static folder
-  //returning frontend for any route other than api
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "client", "bookmark", "build", "index.html")
-    );
-  });
-  app.use(notFound);
-  app.use(errorHandler);
-// }
-// app.use(notFound);
-// app.use(errorHandler);
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/bookmark/build")); // set static folder
+//   //returning frontend for any route other than api
+//   app.get("*", (req, res) => {
+//     res.sendFile(
+//       path.resolve(__dirname, "client", "bookmark", "build", "index.html")
+//     );
+//   });
+//   app.use(notFound);
+//   app.use(errorHandler);
+// // }
+app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 const startServer = async () => {

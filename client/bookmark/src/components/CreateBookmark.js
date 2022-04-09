@@ -3,6 +3,7 @@ import { Tags } from "./Tags";
 import { BookmarkContext } from "../context/ContextProvider";
 import axios from "axios";
 import Admin from "../pages/Admin";
+import { baseUrl } from "../info";
 
 function CreateBookmark() {
   const [url, setUrl] = useState("");
@@ -30,11 +31,7 @@ function CreateBookmark() {
     setUrl("");
     setKeywords("");
     try {
-      const res = await axios.post(
-        "http://localhost:5000/bookmark/a",
-        data,
-        config
-      );
+      const res = await axios.post(baseUrl + "a", data, config);
     } catch (e) {
       console.log(e);
     }
