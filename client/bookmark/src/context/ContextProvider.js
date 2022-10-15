@@ -6,7 +6,7 @@ const BookmarkContext = React.createContext();
 function BookmarkProvider({ children }) {
   const [bookmarks, setBookmarks] = useState([]);
   const getBookmarks = async () => {
-    const Bookmarks = await axios.get(baseUrl);
+    const Bookmarks = await axios.get(`${baseUrl}/bookmark`);
     const { data } = Bookmarks.data;
     setBookmarks(data);
   };
