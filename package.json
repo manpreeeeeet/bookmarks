@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "start": "node server.js",
-    "gcp-build": "npm install --prefix client/bookmark && npm run build --prefix client/bookmark"
+    "start": "node server.js"
   },
   "author": "manpreet singh",
   "license": "ISC",

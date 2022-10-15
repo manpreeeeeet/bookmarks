@@ -25,13 +25,13 @@ app.use(cors(corOptions));
 app.use(express.json());
 app.use("/user", userRoute);
 app.use("/bookmark", bookmarkRoute);
-
-app.use(express.static("client/bookmark/build")); // set static folder
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "client", "bookmark", "build", "index.html")
-    );
-  });
+//
+// app.use(express.static("client/bookmark/build")); // set static folder
+// app.get("*", (req, res) => {
+//     res.sendFile(
+//       path.resolve(__dirname, "client", "bookmark", "build", "index.html")
+//     );
+// });
 
 app.use(notFound);
 app.use(errorHandler);
