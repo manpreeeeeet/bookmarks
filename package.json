@@ -6,7 +6,7 @@
   "scripts": {
     "devStart": "nodemon server.js",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client/bookmark && npm run build --prefix client/bookmark"
+    "gcp-build": "npm install --prefix client/bookmark && npm run build --prefix client/bookmark"
   },
   "author": "manpreet singh",
   "license": "ISC",
