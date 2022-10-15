@@ -1,5 +1,4 @@
 const baseUrl =
-  "http://localhost:5000/bookmark/" ||
-  "https://bookmarkmanpreet.herokuapp.com/";
+  "https://bookmarkhosting-t77xfiypoa-pd.a.run.app/";
 
 export { baseUrl };
