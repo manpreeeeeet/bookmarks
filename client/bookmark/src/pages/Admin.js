@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {baseUrl} from "../info";
 
 function Admin() {
   const navigate = useNavigate();
@@ -10,8 +11,7 @@ function Admin() {
       const config = {
         headers: { Authorization: "Bearer " + token },
       };
-      const res = await axios.get("http://localhost:5000/bookmark/100", config);
-      console.log(res);
+      const res = await axios.get(`${baseUrl}/bookmark/100`, config);
     } catch (e) {
       navigate("/login");
     }
