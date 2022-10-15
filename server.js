@@ -17,7 +17,7 @@ const notFound = require("./middleware/not-found");
 
 // cors
 const corOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://bookmarks-by-manpreet.netlify.app/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corOptions));
