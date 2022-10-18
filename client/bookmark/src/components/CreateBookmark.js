@@ -31,7 +31,7 @@ function CreateBookmark() {
     setUrl("");
     setKeywords("");
     try {
-      const res = await axios.post(baseUrl + "a", data, config);
+      const res = await axios.post(baseUrl + "bookmark/a", data, config);
     } catch (e) {
       console.log(e);
     }

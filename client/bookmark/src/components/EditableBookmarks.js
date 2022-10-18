@@ -55,7 +55,7 @@ function EditableBookmark({
               const config = {
                 headers: { Authorization: "Bearer " + token },
               };
-              await axios.delete(baseUrl + _id, config);
+              await axios.delete(baseUrl + "bookmark/" + _id, config);
             }}
           >
             Delete
